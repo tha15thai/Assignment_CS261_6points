@@ -10,8 +10,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Allow all endpoints
-                .allowedOrigins("http://localhost:3000", "http://node-server:3000", "http://localhost:8080") // Allow only requests from these origins
+                .allowedOrigins("http://localhost:3000", "http://node-server:3000", "http://localhost:8081") // Allow only requests from these origins
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Allow these HTTP methods
                 .allowedHeaders("*"); // Allow all headers
+                //http://localhost:8081 โค้ดเดิมของจารเป็น 8080 แต่ในเครื่องเราเป็น8081 เลยต้องเปลี่ยนตามด้วย **
     }
 }
