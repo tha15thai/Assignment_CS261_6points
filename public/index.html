@@ -7,18 +7,42 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
-        </form>
-        <p id="message"></p>
+        <div class="login-box">
+            <div class="avatar">
+                <img src="avatar.png" alt="Avatar">
+            </div>
+            <h1>Login Page</h1>
+            <p>Name: ทรงศักดิ์ ร่องจิรัยะพาณิช</p>
+
+            <form id="loginForm">
+                <div class="input-container">
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-container">
+                    <select id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="lecturer">Lecturer</option>
+                    </select>
+                </div>
+                <button type="submit" id="loginBtn">Login</button>
+            </form>
+
+            <div class="extra-buttons">
+                <button type="button">Request Form</button>
+                <button type="button" id="dashboardBtn">Dashboard</button>
+                <button type="button" id="logoutBtn">LOGOUT</button>
+            </div>
+
+            <div id="message"></div>
+        </div>
     </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
