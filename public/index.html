@@ -7,39 +7,36 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <div class="login-container">
-        <div class="login-box">
-            <div class="avatar">
-                <img src="avatar.png" alt="Avatar">
+        <div class="header">
+            <div class="circles">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
             </div>
-            <h1>Login Page</h1>
-            <p>Name: ทรงศักดิ์ ร่องจิรัยะพาณิช</p>
+            <p id="userNameDisplay">Name: </p>
+        </div>
 
-            <form id="loginForm">
-                <div class="input-container">
-                    <input type="text" id="username" placeholder="Enter your username" required>
-                </div>
-                <div class="input-container">
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                <div class="input-container">
-                    <select id="role" required>
-                        <option value="" disabled selected>Select your role</option>
-                        <option value="student">Student</option>
-                        <option value="lecturer">Lecturer</option>
-                    </select>
-                </div>
-                <button type="submit" id="loginBtn">Login</button>
-            </form>
+        <div class="form-container">
+            <input type="text" id="usernameInput" placeholder="Username">
+            <input type="password" id="passwordInput" placeholder="Password">
 
-            <div class="extra-buttons">
-                <button type="button">Request Form</button>
-                <button type="button" id="dashboardBtn">Dashboard</button>
-                <button type="button" id="logoutBtn">LOGOUT</button>
+            <div class="dropdown-container">
+                <label for="role">Select your role</label>
+                <select id="role">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="admin">Admin</option>
+                </select>
             </div>
 
-            <div id="message"></div>
+            <button type="button" id="loginButton">Login</button>
+        </div>
+
+        <div class="footer">
+            <button class="btn request-form">Request Form</button>
+            <button class="btn dashboard">Dashboard</button>
+            <button class="btn logout">LOGOUT</button>
         </div>
     </div>
 

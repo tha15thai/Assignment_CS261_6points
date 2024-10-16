@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #e5edea;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,77 +14,103 @@ body {
 }
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f4f8f9;
+    border-radius: 15px;
+    padding: 30px;
+    width: 320px;
     text-align: center;
-    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.avatar {
+.header {
     margin-bottom: 20px;
+    position: relative;
 }
 
-.avatar img {
-    width: 80px;
+.circles {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: white;
     border-radius: 50%;
 }
 
-h1 {
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 20px;
-    font-size: 14px;
+#userNameDisplay {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
     color: #333;
 }
 
-.input-container {
-    margin-bottom: 15px;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-input, select {
-    width: 100%;
+input[type="text"],
+input[type="password"] {
     padding: 10px;
-    margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
 }
 
+.dropdown-container {
+    text-align: left;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #a7c4c0;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 button:hover {
-    background-color: #45a049;
+    background-color: #90b2ae;
 }
 
-.extra-buttons {
+.footer {
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-.extra-buttons button {
-    width: 30%;
+.btn {
+    background-color: #e5edea;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#message {
-    margin-top: 15px;
-    color: red;
+.btn:hover {
+    background-color: #d0d8d6;
+}
+
+.logout {
+    background-color: #a7c4c0;
+    font-weight: bold;
+}
+
+.logout:hover {
+    background-color: #90b2ae;
 }
