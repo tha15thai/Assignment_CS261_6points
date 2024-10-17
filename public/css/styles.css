@@ -13,13 +13,37 @@ body {
     height: 100vh;
 }
 
+/* จัดเลย์เอาต์หลักให้เป็น Flexbox */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* ระยะห่างระหว่างกล่อง login และ result */
+    padding: 20px;
+}
+
 .login-container {
     background-color: #f4f8f9;
     border-radius: 15px;
-    padding: 30px;
+    padding: 20px;
     width: 320px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-container {
+    margin: 100px;
+    background-color: #f4f8f9;
+    border-radius: 15px;
+    padding: 20px;
+    width: auto;
+    display: none; /* ซ่อนกล่องผลลัพธ์เริ่มต้น */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* เมื่อมีข้อมูลให้แสดงกล่อง */
+.result-container.show {
+    display: block;
 }
 
 .header {
@@ -29,16 +53,30 @@ body {
 
 .circles {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
     display: flex;
     gap: 8px;
 }
 
 .circle {
-    width: 10px;
-    height: 10px;
-    background-color: white;
+    width: 20px;
+    height: 20px;
+    background-color: #90b2ae;
+    border-radius: 50%;
+}
+
+.circle1 {
+    width: 20px;
+    height: 20px;
+    background-color: #769490;
+    border-radius: 50%;
+}
+
+.circle2 {
+    width: 20px;
+    height: 20px;
+    background-color: #687c7a;
     border-radius: 50%;
 }
 
@@ -57,10 +95,31 @@ body {
 
 input[type="text"],
 input[type="password"] {
+    width: 100%; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box; 
+}
+
+.password-container{
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute; 
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); 
+    cursor: pointer;
+    color: #90b2ae; 
+    margin-left: 10px;
+}
+
+.toggle-password:hover {
+    color: #728987; /* สีเมื่อ hover เมาส์ */
 }
 
 .dropdown-container {
