@@ -1,6 +1,7 @@
 function submitLogin() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+    const type = document.getElementById('role').value;
 
     fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
         method: 'POST',
@@ -16,11 +17,17 @@ function submitLogin() {
     .then(response => response.json())
     .then(data => {
         document.getElementById('message').innerText = data.message || 'Login successful!';
-        if (data.status) {  // ตรวจสอบว่าการ login สำเร็จหรือไม่
+        /*if (data.status) {  // ตรวจสอบว่าการ login สำเร็จหรือไม่
             showAccountInfo(data); // เรียกฟังก์ชันเพื่อแสดงข้อมูลบัญชี
             document.getElementById('userNameDisplay').innerText = `Name: ${data.displayname_th || 'N/A'}`; // แสดงชื่อผู้ใช้
+        }*/
+        if (data.status) {  // ตรวจสอบว่าการ login สำเร็จหรือไม่
+            if(data.type === type){
+                showAccountInfo(data);
+            } else if (data.type !== type){
+                document.getElementById('message').innerText = 'Invalid Type!';
+            }
         }
-
         // แสดงชื่อผู้ใช้ที่ดึงมาจาก API
         //document.getElementById('userNameDisplay').innerText = `Name: ${data.user.name}`;
         //document.getElementById('message').innerText = data.message;
