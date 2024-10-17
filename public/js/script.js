@@ -24,6 +24,7 @@ function submitLogin() {
         if (data.status) {  // ตรวจสอบว่าการ login สำเร็จหรือไม่
             if(data.type === type){
                 showAccountInfo(data);
+                document.getElementById('userNameDisplay').innerText = `Name: ${data.displayname_th || 'N/A'}`; // แสดงชื่อผู้ใช้
             } else if (data.type !== type){
                 document.getElementById('message').innerText = 'Invalid Type!';
             }
