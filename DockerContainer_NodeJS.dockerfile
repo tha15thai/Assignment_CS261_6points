@@ -23,3 +23,5 @@ EXPOSE 3000
 
 # Step 4: Command to start the Node.js application
 CMD ["node", "server.js"]
+#docker build -f DockerContainer_NodeJS.dockerfile -t nodejs-image .
+#docker run -d --name nodejs-container -p 3000:3000 nodejs-image
